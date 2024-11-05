@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+nav a.active {
+    background-color: red;
+    color: white;
+}
+
+nav a:hover {
+    background-color: rgba(255, 0, 0, 0.603);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.search-bar button {
+    padding: 8px;
+    border: none;
+    color: white;
+    background-color: red;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.search-bar button:hover {
+    background-color: rgba(255, 0, 0, 0.603);
+}
+
+
+.result {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+
+/* Login page styles */
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+
+strong {
+    color: red;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-forgot label {
+    font-weight: normal;
+}
+
+.remember-forgot a {
+    color: pink;
+    text-decoration: none;
+}
+
+
+.logout {
+    background-color: transparent;
+    color: red;
+    padding: 10px;
+    border: 2px solid red;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background-color: red;
+    border: 2px solid red;
+    color: white;
+}
+
+.continue-with {
+    margin-top: 20px;
+}
+
+.continue-with p {
+    margin: 0 0 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+main {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Subtle curve for input fields */
+    width: 70%;
+    box-sizing: border-box;
+}
+
+
+form button[type="submit"] {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+form button[type="submit"]:hover {
+    background-color: rgba(255, 0, 0, 0.603);
+}
+
+.action-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
