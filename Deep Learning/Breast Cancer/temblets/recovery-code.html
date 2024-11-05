@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovery Code</title>
+    <link rel="stylesheet" href="/static/css/recovery-code.css">
+    <link rel="icon" href="pic/logo.png" type="image/png">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Enter <span class="pink">Recovery Code</span></h1>
+        <p class="typing">Please enter the recovery code sent to your email.</p>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class="flashes">
+            {% for category, message in messages %}
+              <strong><li class="{{ category }}">{{ message }}</li></strong>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% endwith %}
+        <form id="recovery-code-form" method="POST">
+            <label for="recovery-code">Recovery Code</label>
+            <input type="text" id="recovery-code" name="recovery-code" placeholder="Enter your recovery code" required>
+            <button type="submit" class="login-btn">Submit</button>
+        </form>
+    </div>
+    <!-- <script src="/static/js/recovery-code.js"></script> -->
+</body>
+</html>

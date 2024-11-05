@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Light AI</title>
+    <link rel="stylesheet" href="/static/css/result.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/static/pic/رؤؤر (1) 1.svg" alt="Pink Light AI">
+            <span>Pink Light AI</span>
+        </div>
+        <nav>
+            <a href="{{ url_for('home') }}" id="home" class="active">Home</a>
+            <a href="{{ url_for('profile') }}" id="profile">Profile</a>
+            {# Check if the user is an admin #}
+            {% if session.get('is_admin') %}
+                <a href="{{ url_for('admin_dashboard') }}">Dashboard</a>
+            {% endif %}
+
+            <!-- <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>🔍</button>
+            </div> -->
+            <form id="logout-form" action="{{ url_for('logout') }}" method="post">
+                <button class="logout" id="logout">Logout</button> 
+            </form>
+        </nav>
+</header>
+    <h1>Result</h1>
+    <p>The uploaded image is predicted as: <strong>{{ result }}</strong></p>
+    
+</html>

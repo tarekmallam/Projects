@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/admin_dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/static/pic/رؤؤر (1) 1.svg" alt="Pink Light AI">
+            <span>Pink Light AI</span>
+        </div>
+        <nav>
+            <a href="{{ url_for('home') }}" id="home">Home</a>
+            <a href="{{ url_for('profile') }}" id="profile">Profile</a>
+            {% if session.get('is_admin') %}
+                <a href="{{ url_for('admin_dashboard') }}" id="dashboard">Dashboard</a>
+            {% endif %} 
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+                <button>🔍</button>
+            </div>
+            <form id="logout-form" action="{{ url_for('logout') }}" method="post">
+                <button class="logout" id="logout">Logout</button> 
+            </form>
+        </nav>
+</header>
+    <main>
+        <h2>All Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.first_name }} {{ user.last_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <div class="action-buttons">
+                            <form action="{{ url_for('update_password') }}" method="post">
+                                <input type="hidden" name="user_id" value="{{ user.id }}">
+                                <input type="password" name="new_password" placeholder="New Password" required>
+                                <button type="submit">Update Password</button>
+                            </form>
+                            <!-- {{ user.username }}
+                            {% if not user.is_admin %}
+                                <form method="POST" action="{{ url_for('delete_user', user_id=user.id) }}">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            {% endif %} -->
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
